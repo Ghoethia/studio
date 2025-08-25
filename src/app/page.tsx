@@ -4,6 +4,8 @@ import HeroSection from '@/components/sections/hero-section';
 import ProjectsSection from '@/components/sections/projects-section';
 import AboutSection from '@/components/sections/about-section';
 import ServicesSection from '@/components/sections/services-section';
+import ContactSection from '@/components/sections/contact-section';
+import WhatsAppButton from '@/components/whatsapp-button';
 
 export default function Home() {
   return (
@@ -11,11 +13,13 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <ServicesSection />
         <ProjectsSection />
         <AboutSection />
-        <ServicesSection />
+        <ContactSection />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

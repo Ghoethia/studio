@@ -9,34 +9,34 @@ interface Service {
 
 const services: Service[] = [
   {
-    title: 'Diseño Arquitectónico',
-    description: 'Creamos planos y diseños innovadores y funcionales adaptados a tus necesidades.',
-    icon: ClipboardPenLine,
+    title: 'Pintura de Fachadas',
+    description: 'Especialistas en pintura exterior que protege y embellece tu propiedad con acabados duraderos.',
+    icon: Building,
   },
   {
-    title: 'Construcción Residencial',
-    description: 'Edificamos hogares de alta calidad, desde cimientos hasta el último detalle.',
+    title: 'Pintura de Interiores',
+    description: 'Renovamos tus espacios interiores con colores y técnicas que reflejan tu estilo personal.',
     icon: Home,
   },
   {
     title: 'Remodelaciones',
-    description: 'Transformamos y modernizamos tus espacios para darles una nueva vida.',
+    description: 'Transformamos y modernizamos tus espacios para darles una nueva vida y mayor funcionalidad.',
     icon: Paintbrush,
   },
   {
-    title: 'Proyectos Comerciales',
-    description: 'Desarrollamos locales, oficinas y edificios comerciales a gran escala.',
-    icon: Building,
-  },
-  {
-    title: 'Diseño de Paisajes',
-    description: 'Integramos la naturaleza en tus proyectos con diseños de jardines y exteriores.',
-    icon: Trees,
-  },
-  {
-    title: 'Mantenimiento y Reparación',
-    description: 'Ofrecemos servicios post-construcción para garantizar la longevidad de tu inversión.',
+    title: 'Impermeabilización',
+    description: 'Protegemos tu inversión con sistemas de impermeabilización de alta calidad para techos y muros.',
     icon: Wrench,
+  },
+  {
+    title: 'Diseño y Decoración',
+    description: 'Te asesoramos en la elección de colores y acabados para crear ambientes únicos y armoniosos.',
+    icon: ClipboardPenLine,
+  },
+  {
+    title: 'Mantenimiento General',
+    description: 'Ofrecemos servicios de mantenimiento para garantizar la longevidad y belleza de tus espacios.',
+    icon: Trees,
   },
 ];
 
@@ -47,14 +47,14 @@ export default function ServicesSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Nuestros Servicios</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Ofrecemos una gama completa de servicios para cubrir todas las fases de tu proyecto, garantizando excelencia y profesionalismo.
+            Ofrecemos una gama completa de soluciones en pintura y remodelación para transformar tus espacios.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.title} className="text-center flex flex-col items-center p-6">
+            <Card key={service.title} className="text-center flex flex-col items-center p-6 bg-card rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <CardHeader>
-                <div className="mx-auto bg-primary text-primary-foreground rounded-full p-4 mb-4">
+                <div className="mx-auto bg-accent text-accent-foreground rounded-full p-4 mb-4">
                   <service.icon className="h-8 w-8" />
                 </div>
                 <CardTitle className="font-headline text-xl">{service.title}</CardTitle>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Paintbrush, Menu, Phone } from 'lucide-react';
+import { Leaf, Menu, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -37,8 +37,8 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Paintbrush className="h-8 w-8 text-accent" />
-          <span className="font-bold text-2xl font-headline text-foreground">Pintufachadas</span>
+          <Leaf className="h-8 w-8 text-accent" />
+          <span className="font-bold text-2xl font-headline text-foreground">Montecarlo</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navLinks.map((link) => (
@@ -71,8 +71,8 @@ export default function Header() {
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 mb-4" prefetch={false} onClick={closeMobileMenu}>
-                  <Paintbrush className="h-6 w-6 text-accent" />
-                  <span className="font-bold text-xl font-headline">Pintufachadas</span>
+                  <Leaf className="h-6 w-6 text-accent" />
+                  <span className="font-bold text-xl font-headline">Montecarlo</span>
                 </Link>
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (

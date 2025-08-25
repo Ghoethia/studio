@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ClipboardPenLine, Home, Paintbrush, Trees, Building, Wrench, type LucideIcon } from 'lucide-react';
+import { ClipboardPenLine, Wind, Sprout, ShieldCheck, Mountain, Beaker, type LucideIcon } from 'lucide-react';
 
 interface Service {
   title: string;
@@ -9,34 +9,34 @@ interface Service {
 
 const services: Service[] = [
   {
-    title: 'Pintura de Fachadas',
-    description: 'Especialistas en pintura exterior que protege y embellece tu propiedad con acabados duraderos.',
-    icon: Building,
+    title: 'Estudios de Suelo',
+    description: 'Análisis y caracterización de suelos para proyectos de construcción, agrícolas y de conservación.',
+    icon: Beaker,
   },
   {
-    title: 'Pintura de Interiores',
-    description: 'Renovamos tus espacios interiores con colores y técnicas que reflejan tu estilo personal.',
-    icon: Home,
-  },
-  {
-    title: 'Remodelaciones',
-    description: 'Transformamos y modernizamos tus espacios para darles una nueva vida y mayor funcionalidad.',
-    icon: Paintbrush,
-  },
-  {
-    title: 'Impermeabilización',
-    description: 'Protegemos tu inversión con sistemas de impermeabilización de alta calidad para techos y muros.',
-    icon: Wrench,
-  },
-  {
-    title: 'Diseño y Decoración',
-    description: 'Te asesoramos en la elección de colores y acabados para crear ambientes únicos y armoniosos.',
+    title: 'Planes Ambientales',
+    description: 'Diseño de planes de manejo y seguimiento ambiental para garantizar la sostenibilidad de sus operaciones.',
     icon: ClipboardPenLine,
   },
   {
-    title: 'Mantenimiento General',
-    description: 'Ofrecemos servicios de mantenimiento para garantizar la longevidad y belleza de tus espacios.',
-    icon: Trees,
+    title: 'Evaluación de Impacto',
+    description: 'Realizamos evaluaciones de impacto ambiental (EIA) rigurosas y conformes a la normativa vigente.',
+    icon: Wind,
+  },
+  {
+    title: 'Gestión de Residuos',
+    description: 'Soluciones integrales para la gestión, tratamiento y valorización de residuos sólidos y peligrosos.',
+    icon: Sprout,
+  },
+  {
+    title: 'Consultoría en Sostenibilidad',
+    description: 'Asesoría estratégica para integrar prácticas sostenibles y de responsabilidad social en su negocio.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Estudios de Riesgo',
+    description: 'Análisis y evaluación de riesgos naturales y antrópicos para la planificación y prevención.',
+    icon: Mountain,
   },
 ];
 
@@ -47,7 +47,7 @@ export default function ServicesSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Nuestros Servicios</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Ofrecemos una gama completa de soluciones en pintura y remodelación para transformar tus espacios.
+            Ofrecemos una gama completa de soluciones en consultoría ambiental para impulsar un desarrollo sostenible.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

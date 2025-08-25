@@ -3,28 +3,28 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 
 const projects = [
   {
-    title: 'Residencia Moderna',
-    description: 'Pintura exterior completa con acabados de alta durabilidad y protección UV.',
+    title: 'Evaluación de Impacto Ambiental',
+    description: 'Análisis detallado para un proyecto de infraestructura a gran escala, asegurando el cumplimiento normativo.',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'modern house exterior'
+    aiHint: 'wind turbines field'
   },
   {
-    title: 'Oficinas Corporativas',
-    description: 'Renovación de interiores con paleta de colores corporativa y pintura de alta resistencia.',
+    title: 'Estudio de Suelos para Agricultura',
+    description: 'Caracterización de suelos para optimizar el rendimiento de cultivos y promover prácticas agrícolas sostenibles.',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'modern office interior'
+    aiHint: 'soil study agriculture'
   },
   {
-    title: 'Edificio Residencial',
-    description: 'Impermeabilización y pintura de fachada para un edificio de apartamentos.',
+    title: 'Plan de Manejo de Cuencas',
+    description: 'Diseño e implementación de estrategias para la conservación de recursos hídricos en una cuenca hidrográfica.',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'apartment building'
+    aiHint: 'river watershed aerial'
   },
   {
-    title: 'Local Comercial',
-    description: 'Aplicación de pintura epóxica en pisos y renovación de fachada para tienda.',
+    title: 'Programa de Reforestación',
+    description: 'Ejecución de un plan de reforestación para la recuperación de un ecosistema forestal degradado.',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'store front'
+    aiHint: 'reforestation project'
   },
 ];
 
@@ -35,7 +35,7 @@ export default function ProjectsSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Proyectos Destacados</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Explora algunos de nuestros trabajos recientes y comprueba la calidad y el detalle que nos caracteriza.
+            Explora algunos de nuestros casos de éxito y comprueba el impacto positivo de nuestras soluciones ambientales.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">

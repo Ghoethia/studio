@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Pintufachadas - Pintura y remodelación',
-  description: 'Servicios profesionales de pintura y remodelación para fachadas e interiores.',
+  title: 'Montecarlo - Consultoría Ambiental',
+  description: 'Servicios profesionales en estudios de suelo, planes ambientales y sostenibilidad.',
 };
 
 export default function RootLayout({

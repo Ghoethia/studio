@@ -8,10 +8,10 @@ export default function AboutSection() {
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline text-primary">Sobre Nosotros</h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Somos una empresa con más de 10 años de experiencia dedicada a la pintura profesional y remodelación de espacios. Nuestra pasión es transformar ambientes, aportando color, calidad y un servicio excepcional en cada proyecto.
+              Somos una firma de consultoría ambiental con más de 10 años de experiencia, dedicada a ofrecer soluciones sostenibles e innovadoras. Nuestra pasión es balancear el desarrollo con la conservación del medio ambiente.
             </p>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-             Nos comprometemos con la satisfacción de nuestros clientes, utilizando los mejores materiales y un equipo de profesionales altamente cualificados para garantizar resultados impecables y duraderos que superen tus expectativas.
+             Nos comprometemos con la excelencia técnica y la satisfacción de nuestros clientes, utilizando metodologías de vanguardia y un equipo multidisciplinario para garantizar resultados precisos y confiables que impulsen un futuro más verde.
             </p>
           </div>
           <div className="flex justify-center">
@@ -19,8 +19,8 @@ export default function AboutSection() {
               src="https://placehold.co/600x400.png"
               width="600"
               height="400"
-              alt="Equipo de Pintufachadas"
-              data-ai-hint="painters team working"
+              alt="Equipo de Montecarlo en el campo"
+              data-ai-hint="environmental scientists team"
               className="rounded-xl shadow-lg object-cover"
             />
           </div>

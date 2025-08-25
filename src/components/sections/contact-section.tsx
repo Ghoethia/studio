@@ -59,7 +59,7 @@ export default function ContactSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Contáctanos</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            ¿Listo para empezar tu próximo proyecto? Completa el formulario y solicita tu cotización sin compromiso.
+            ¿Listo para empezar tu próximo proyecto ambiental? Completa el formulario y solicita tu cotización sin compromiso.
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -147,7 +147,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                         <p className="font-semibold">Email</p>
-                        <a href="mailto:contacto@pintufachadas.com" className="text-muted-foreground hover:text-accent">contacto@pintufachadas.com</a>
+                        <a href="mailto:contacto@montecarlo.com" className="text-muted-foreground hover:text-accent">contacto@montecarlo.com</a>
                     </div>
                 </div>
                  <div className="flex items-center gap-4">
@@ -156,7 +156,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                         <p className="font-semibold">Ubicación</p>
-                        <p className="text-muted-foreground">Ciudad, País - Atendemos en toda la región.</p>
+                        <p className="text-muted-foreground">Ciudad, País - Atendemos a nivel nacional.</p>
                     </div>
                 </div>
              </div>

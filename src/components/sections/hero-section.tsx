@@ -1,73 +1,60 @@
 
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+const images = [
+  {
+    src: 'https://picsum.photos/1920/1080',
+    alt: 'Bosque frondoso representando la naturaleza y el medio ambiente',
+    aiHint: 'lush forest landscape',
+  },
+  {
+    src: 'https://picsum.photos/1920/1081',
+    alt: 'Científico realizando un estudio de suelo en el campo',
+    aiHint: 'environmental scientist field',
+  },
+  {
+    src: 'https://picsum.photos/1920/1082',
+    alt: 'Parque eólico como ejemplo de energía sostenible',
+    aiHint: 'wind turbines sustainable',
+  },
+];
 
 export default function HeroSection() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Cambia la imagen cada 5 segundos
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const setCanvasDimensions = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    setCanvasDimensions();
-
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
-    const charactersArray = characters.split('');
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
-
-    const drops: number[] = [];
-    for (let x = 0; x < columns; x++) {
-      drops[x] = 1;
-    }
-
-    let animationFrameId: number;
-
-    const draw = () => {
-      ctx.fillStyle = 'rgba(21, 38, 30, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = 'hsl(var(--accent))'; // Usar el color de acento del tema
-      ctx.font = `${fontSize}px arial`;
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = charactersArray[Math.floor(Math.random() * charactersArray.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-
-        drops[i]++;
-      }
-      animationFrameId = requestAnimationFrame(draw);
-    };
-
-    draw();
-    
-    window.addEventListener('resize', setCanvasDimensions);
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', setCanvasDimensions);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-center text-center text-white">
-      <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full z-0"></canvas>
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm z-10" />
+    <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-center text-center text-white overflow-hidden">
+      {images.map((image, index) => (
+        <Image
+          key={image.src}
+          src={image.src}
+          alt={image.alt}
+          fill
+          priority={index === 0}
+          className={cn(
+            'object-cover transition-opacity duration-1000 ease-in-out',
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          )}
+          data-ai-hint={image.aiHint}
+        />
+      ))}
+      <div className="absolute inset-0 bg-background/60 z-10" />
       <div className="relative z-20 container mx-auto px-4 md:px-6 space-y-6">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl font-headline text-accent">
           Soluciones Ambientales para un Futuro Sostenible

@@ -57,9 +57,9 @@ export default function ContactSection() {
     <section id="contacto" className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Contáctanos</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Habla con un experto</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            ¿Listo para empezar tu próximo proyecto ambiental? Completa el formulario y solicita tu cotización sin compromiso.
+            ¿Listo para empezar tu próximo proyecto ambiental? Completa el formulario y solicita tu cotización sin compromiso. Nuestro equipo está listo para brindarte la mejor solución.
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -120,7 +120,7 @@ export default function ContactSection() {
                     )}
                   />
                   <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full" disabled={isLoading}>
-                    {isLoading ? 'Enviando...' : 'Enviar Mensaje'}
+                    {isLoading ? 'Enviando...' : 'Solicitar Cotización'}
                   </Button>
                 </form>
               </Form>

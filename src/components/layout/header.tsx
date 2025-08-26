@@ -56,7 +56,7 @@ export default function Header() {
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full">
             <Link href="#contacto">
               <Phone className="mr-2 h-4 w-4" />
-              Cotizar
+              Cotizar Ahora
             </Link>
           </Button>
         </div>
@@ -90,7 +90,7 @@ export default function Header() {
                 <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full mt-4">
                   <Link href="#contacto" onClick={closeMobileMenu}>
                     <Phone className="mr-2 h-4 w-4" />
-                    Cotizar
+                    Cotizar Ahora
                   </Link>
                 </Button>
               </div>

@@ -32,6 +32,8 @@ export default function HeroSection() {
       drops[x] = 1;
     }
 
+    let animationFrameId: number;
+
     const draw = () => {
       ctx.fillStyle = 'rgba(21, 38, 30, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -49,14 +51,15 @@ export default function HeroSection() {
 
         drops[i]++;
       }
+      animationFrameId = requestAnimationFrame(draw);
     };
 
-    const intervalId = setInterval(draw, 33);
+    draw();
     
     window.addEventListener('resize', setCanvasDimensions);
 
     return () => {
-      clearInterval(intervalId);
+      cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', setCanvasDimensions);
     };
   }, []);
@@ -64,13 +67,13 @@ export default function HeroSection() {
   return (
     <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-center text-center text-white">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full z-0"></canvas>
-      <div className="absolute inset-0 bg-background/80 z-10" />
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm z-10" />
       <div className="relative z-20 container mx-auto px-4 md:px-6 space-y-6">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl font-headline text-accent">
-          Innovación, Sostenibilidad, Futuro
+          Soluciones Ambientales para un Futuro Sostenible
         </h1>
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/90 font-body">
-          Consultoría ambiental experta para un desarrollo responsable. Realizamos estudios de suelo, planes de manejo y evaluaciones de impacto.
+          En Montecarlo, combinamos ciencia y tecnología para ofrecer consultoría ambiental de vanguardia. Impulsamos el desarrollo responsable a través de estudios de suelo, planes de manejo y evaluaciones de impacto precisas.
         </p>
         <div className="flex justify-center">
           <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full">

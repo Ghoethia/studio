@@ -3,6 +3,8 @@ import type {NextConfig} from 'next';
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
+  // Reemplaza 'nextn' con el nombre de tu repositorio de GitHub si es diferente.
+  basePath: process.env.NODE_ENV === 'production' ? '/nextn' : '',
   typescript: {
     ignoreBuildErrors: true,
   },

@@ -1,5 +1,5 @@
-# Firebase Studio
+# SI ESTAS VIENDO ESTA MONDA, ES PORQUE AUN NO DESPLIEGA
 
-This is a NextJS starter in Firebase Studio.
+Fijo tienes mal el puntero, marica tan bobo
 
-To get started, take a look at src/app/page.tsx.
+Debe ejecutarse el que funciona como Index -> src/app/page.tsx.

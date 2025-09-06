@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ClipboardPenLine, Wind, Sprout, ShieldCheck, Mountain, Beaker, type LucideIcon } from 'lucide-react';
+import { Card, CardContent, CardTitle, CardDescription } from '@/components/ui/card';
+import { Map, ShieldCheck, Wind, Droplets, Unplug, Layers, type LucideIcon } from 'lucide-react';
 
 interface Service {
   title: string;
@@ -12,46 +12,46 @@ interface Service {
 
 const services: Service[] = [
   {
-    title: 'Estudios de Suelo',
-    description: 'Análisis y caracterización de suelos para proyectos de construcción, agrícolas y de conservación.',
-    icon: Beaker,
+    title: 'Planificación Territorial',
+    description: 'Elaboramos planes de ordenamiento (POT) y parciales, con diagnósticos precisos y cartografía detallada para un desarrollo equilibrado.',
+    icon: Map,
     image: 'https://picsum.photos/600/400?random=7',
-    aiHint: 'soil analysis lab'
+    aiHint: 'territorial planning map'
   },
   {
-    title: 'Planes Ambientales',
-    description: 'Diseño de planes de manejo y seguimiento ambiental para garantizar la sostenibilidad de sus operaciones.',
-    icon: ClipboardPenLine,
+    title: 'Gestión Ambiental',
+    description: 'Realizamos auditorías, consultorías y ofrecemos acompañamiento técnico y jurídico para el cumplimiento de la normativa ambiental.',
+    icon: ShieldCheck,
     image: 'https://picsum.photos/600/400?random=8',
-    aiHint: 'environmental plan document'
+    aiHint: 'environmental management'
   },
   {
-    title: 'Evaluación de Impacto',
-    description: 'Realizamos evaluaciones de impacto ambiental (EIA) rigurosas y conformes a la normativa vigente.',
+    title: 'Estudios de Impacto',
+    description: 'Desarrollamos Estudios de Impacto Ambiental (EIA) y Diagnósticos Ambientales (DAA) para evaluar la viabilidad de tus proyectos.',
     icon: Wind,
     image: 'https://picsum.photos/600/400?random=9',
     aiHint: 'wind turbines field'
   },
   {
-    title: 'Gestión de Residuos',
-    description: 'Soluciones integrales para la gestión, tratamiento y valorización de residuos sólidos y peligrosos.',
-    icon: Sprout,
+    title: 'Estudios Hidrológicos',
+    description: 'Análisis hidrológicos e hidráulicos para una gestión eficiente del recurso hídrico y la caracterización de cuencas.',
+    icon: Droplets,
     image: 'https://picsum.photos/600/400?random=10',
-    aiHint: 'recycling plant'
+    aiHint: 'water study river'
   },
   {
-    title: 'Consultoría en Sostenibilidad',
-    description: 'Asesoría estratégica para integrar prácticas sostenibles y de responsabilidad social en su negocio.',
-    icon: ShieldCheck,
+    title: 'Gestión del Riesgo',
+    description: 'Formulamos Planes de Gestión del Riesgo (PGR) para prevenir y mitigar desastres naturales y antrópicos.',
+    icon: Unplug,
     image: 'https://picsum.photos/600/400?random=11',
-    aiHint: 'sustainable city'
+    aiHint: 'risk analysis chart'
   },
   {
-    title: 'Estudios de Riesgo',
-    description: 'Análisis y evaluación de riesgos naturales y antrópicos para la planificación y prevención.',
-    icon: Mountain,
+    title: 'Cartografía y Geodatabase',
+    description: 'Generamos geodatabases, mapas temáticos y realizamos correcciones cartográficas con alta precisión para tus análisis territoriales.',
+    icon: Layers,
     image: 'https://picsum.photos/600/400?random=12',
-    aiHint: 'landslide risk analysis'
+    aiHint: 'topographic map'
   },
 ];
 

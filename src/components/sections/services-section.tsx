@@ -1,58 +1,95 @@
-import Image from 'next/image';
-import { Card, CardContent, CardTitle, CardDescription } from '@/components/ui/card';
-import { Map, ShieldCheck, Wind, Droplets, Unplug, Layers, type LucideIcon } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Map, ShieldCheck, Wind, Droplets, Unplug, Layers, Microscope, AirVent, Database } from 'lucide-react';
 
-interface Service {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  image: string;
-  aiHint: string;
-}
-
-const services: Service[] = [
+const serviceCategories = [
   {
     title: 'Planificación Territorial',
-    description: 'Elaboramos planes de ordenamiento (POT) y parciales, con diagnósticos precisos y cartografía detallada para un desarrollo equilibrado.',
-    icon: Map,
-    image: 'https://picsum.photos/600/400?random=7',
-    aiHint: 'territorial planning map'
+    icon: <Map className="h-6 w-6 text-accent" />,
+    description: 'Desarrollamos instrumentos de planificación para guiar el crecimiento y uso del suelo de manera sostenible, asegurando el cumplimiento normativo y la protección de los recursos.',
+    services: [
+      {
+        name: 'Planes de Ordenamiento Territorial (POT)',
+        details: 'Realizamos el diagnóstico y la formulación de planes maestros que definen la estructura y las directrices para el desarrollo urbano y rural a largo plazo.'
+      },
+      {
+        name: 'Planes Parciales',
+        details: 'Elaboramos instrumentos detallados para desarrollar áreas específicas del municipio, complementando y ejecutando las directrices del POT.'
+      },
+      {
+        name: 'Correcciones y Análisis Cartográfico',
+        details: 'Ofrecemos servicios de alta precisión en la creación, corrección y análisis de cartografía base y temática para todo tipo de proyectos territoriales.'
+      }
+    ]
   },
   {
     title: 'Gestión Ambiental',
-    description: 'Realizamos auditorías, consultorías y ofrecemos acompañamiento técnico y jurídico para el cumplimiento de la normativa ambiental.',
-    icon: ShieldCheck,
-    image: 'https://picsum.photos/600/400?random=8',
-    aiHint: 'environmental management'
+    icon: <ShieldCheck className="h-6 w-6 text-accent" />,
+    description: 'Ofrecemos un soporte integral para que las organizaciones cumplan con la legislación ambiental y mejoren su desempeño de manera proactiva y eficiente.',
+    services: [
+      {
+        name: 'Auditorías y Consultoría Ambiental',
+        details: 'Ejecutamos auditorías exhaustivas y ofrecemos consultoría experta, incluyendo outsourcing, para optimizar la gestión ambiental de su empresa.'
+      },
+      {
+        name: 'Indicadores y Seguimiento',
+        details: 'Diseñamos y realizamos el seguimiento a indicadores clave que permiten medir y reportar el desempeño ambiental de forma clara y objetiva.'
+      },
+      {
+        name: 'Acompañamiento Técnico y Jurídico',
+        details: 'Brindamos soporte especializado en procesos sancionatorios y en la implementación de medidas preventivas, asegurando el respaldo legal y técnico.'
+      }
+    ]
   },
   {
-    title: 'Estudios de Impacto',
-    description: 'Desarrollamos Estudios de Impacto Ambiental (EIA) y Diagnósticos Ambientales (DAA) para evaluar la viabilidad de tus proyectos.',
-    icon: Wind,
-    image: 'https://picsum.photos/600/400?random=9',
-    aiHint: 'wind turbines field'
+    title: 'Estudios Ambientales',
+    icon: <Wind className="h-6 w-6 text-accent" />,
+    description: 'Realizamos análisis técnicos y científicos para evaluar la viabilidad de proyectos y garantizar su armonía con el entorno natural y la normativa vigente.',
+    services: [
+      {
+        name: 'Estudios de Impacto Ambiental (EIA)',
+        details: 'Evaluamos los posibles impactos de un proyecto para definir medidas de manejo que aseguren su sostenibilidad y aprobación.'
+      },
+       {
+        name: 'Diagnósticos Ambientales de Alternativas (DAA)',
+        details: 'Analizamos diferentes opciones de un proyecto para seleccionar la alternativa que ofrezca los menores impactos ambientales y sociales.'
+      },
+      {
+        name: 'Planes de Manejo Ambiental (PMA)',
+        details: 'Diseñamos programas y estrategias específicas para prevenir, mitigar y compensar los impactos identificados en los estudios ambientales.'
+      },
+       {
+        name: 'Estudios Hidrológicos e Hidráulicos',
+        details: 'Analizamos el comportamiento del agua para proyectos que interactúan con cuerpos hídricos, garantizando una gestión sostenible del recurso.'
+      },
+      {
+        name: 'Caracterización de Flora y Fauna',
+        details: 'Realizamos inventarios y análisis de la biodiversidad para establecer líneas base y planes de conservación en áreas de influencia de proyectos.'
+      },
+      {
+        name: 'Planes de Gestión del Riesgo (PGR)',
+        details: 'Identificamos y evaluamos riesgos de origen natural o antrópico, formulando planes para su prevención y mitigación efectiva.'
+      }
+    ]
   },
   {
-    title: 'Estudios Hidrológicos',
-    description: 'Análisis hidrológicos e hidráulicos para una gestión eficiente del recurso hídrico y la caracterización de cuencas.',
-    icon: Droplets,
-    image: 'https://picsum.photos/600/400?random=10',
-    aiHint: 'water study river'
-  },
-  {
-    title: 'Gestión del Riesgo',
-    description: 'Formulamos Planes de Gestión del Riesgo (PGR) para prevenir y mitigar desastres naturales y antrópicos.',
-    icon: Unplug,
-    image: 'https://picsum.photos/600/400?random=11',
-    aiHint: 'risk analysis chart'
-  },
-  {
-    title: 'Cartografía y Geodatabase',
-    description: 'Generamos geodatabases, mapas temáticos y realizamos correcciones cartográficas con alta precisión para tus análisis territoriales.',
-    icon: Layers,
-    image: 'https://picsum.photos/600/400?random=12',
-    aiHint: 'topographic map'
-  },
+    title: 'Otros Servicios Especializados',
+    icon: <Microscope className="h-6 w-6 text-accent" />,
+    description: 'Ofrecemos soluciones técnicas avanzadas y análisis de datos geoespaciales para complementar sus proyectos con información precisa y detallada.',
+    services: [
+      {
+        name: 'Mediciones de Calidad de Aire y Ruido',
+        details: 'Realizamos monitoreos técnicos para medir los niveles de contaminantes en el aire y la presión sonora, garantizando el cumplimiento de los estándares normativos.'
+      },
+      {
+        name: 'Geodatabase y Mapas Temáticos',
+        details: 'Diseñamos y estructuramos bases de datos geoespaciales y creamos mapas personalizados que facilitan el análisis y la toma de decisiones territoriales.'
+      },
+      {
+        name: 'Estudios Topográficos',
+        details: 'Realizamos levantamientos topográficos de alta precisión, fundamentales para el diseño y construcción de cualquier proyecto de infraestructura.'
+      }
+    ]
+  }
 ];
 
 export default function ServicesSection() {
@@ -62,32 +99,37 @@ export default function ServicesSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Nuestros Servicios</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Ofrecemos una gama completa de soluciones en consultoría ambiental para impulsar un desarrollo sostenible.
+            Ofrecemos una gama completa de soluciones en consultoría ambiental, adaptadas a las necesidades de cada proyecto para garantizar el desarrollo sostenible y el cumplimiento normativo.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <Card key={service.title} className="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-              <Image
-                src={service.image}
-                alt={`Imagen de ${service.title}`}
-                data-ai-hint={service.aiHint}
-                width={600}
-                height={400}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity duration-300 group-hover:from-black/90"></div>
-              <CardContent className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
-                <div className="mx-auto bg-accent/20 text-white backdrop-blur-sm rounded-full p-3 mb-4 border border-white/20">
-                  <service.icon className="h-8 w-8" />
-                </div>
-                <CardTitle className="font-headline text-2xl text-shadow mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-white/90 font-body text-shadow-sm transition-all duration-300 max-h-0 opacity-0 group-hover:max-h-screen group-hover:opacity-100 group-hover:mt-2">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+            {serviceCategories.map((category) => (
+              <AccordionItem key={category.title} value={category.title} className="border-b-2 border-primary/10">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-accent/10 p-3 rounded-full">
+                       {category.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-headline font-semibold text-primary">{category.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 pl-16">
+                  <ul className="space-y-4">
+                    {category.services.map((service) => (
+                      <li key={service.name}>
+                        <h4 className="font-semibold text-foreground">{service.name}</h4>
+                        <p className="text-muted-foreground text-sm mt-1">{service.details}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>

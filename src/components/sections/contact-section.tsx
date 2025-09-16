@@ -63,7 +63,7 @@ export default function ContactSection() {
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <Card className="p-8 border-2 border-accent/20 rounded-xl">
+          <Card className="p-8 border-2 border-primary/10 rounded-xl shadow-lg">
             <CardContent className="p-0">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -119,43 +119,43 @@ export default function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full" disabled={isLoading}>
+                  <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full text-lg py-6" disabled={isLoading}>
                     {isLoading ? 'Enviando...' : 'Solicitar Cotización'}
                   </Button>
                 </form>
               </Form>
             </CardContent>
           </Card>
-          <div className="space-y-8">
+          <div className="space-y-8 mt-4 lg:mt-0">
              <h3 className="text-2xl font-bold font-headline text-primary">Información de Contacto</h3>
              <p className="text-muted-foreground">
                 También puedes contactarnos directamente a través de estos canales. ¡Estamos listos para ayudarte!
              </p>
-             <div className="space-y-4">
+             <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                    <div className="bg-accent/10 p-3 rounded-full">
-                        <Phone className="h-6 w-6 text-accent" />
+                    <div className="bg-primary/10 p-3 rounded-full">
+                        <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                        <p className="font-semibold">Teléfono</p>
-                        <a href="tel:+123456789" className="text-muted-foreground hover:text-accent">+1 (23) 456-7890</a>
+                        <p className="font-semibold text-lg">Teléfono</p>
+                        <a href="tel:+123456789" className="text-muted-foreground hover:text-primary">+1 (23) 456-7890</a>
                     </div>
                 </div>
                  <div className="flex items-center gap-4">
-                    <div className="bg-accent/10 p-3 rounded-full">
-                        <Mail className="h-6 w-6 text-accent" />
+                    <div className="bg-primary/10 p-3 rounded-full">
+                        <Mail className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                        <p className="font-semibold">Email</p>
-                        <a href="mailto:contacto@montecarlo.com" className="text-muted-foreground hover:text-accent">contacto@montecarlo.com</a>
+                        <p className="font-semibold text-lg">Email</p>
+                        <a href="mailto:contacto@montecarlo.com" className="text-muted-foreground hover:text-primary">contacto@montecarlo.com</a>
                     </div>
                 </div>
                  <div className="flex items-center gap-4">
-                    <div className="bg-accent/10 p-3 rounded-full">
-                        <MapPin className="h-6 w-6 text-accent" />
+                    <div className="bg-primary/10 p-3 rounded-full">
+                        <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                        <p className="font-semibold">Ubicación</p>
+                        <p className="font-semibold text-lg">Ubicación</p>
                         <p className="text-muted-foreground">Ciudad, País - Atendemos a nivel nacional.</p>
                     </div>
                 </div>

@@ -1,96 +1,64 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Map, ShieldCheck, Wind, Microscope } from 'lucide-react';
+import Image from 'next/image';
+import { CheckCircle } from 'lucide-react';
 
 const serviceCategories = [
   {
     title: 'Planificación Territorial',
-    icon: <Map className="h-6 w-6 text-accent" />,
-    description: 'Desarrollamos instrumentos de planificación para guiar el crecimiento y uso del suelo de manera sostenible, asegurando el cumplimiento normativo y la protección de los recursos.',
+    imageUrl: 'https://picsum.photos/seed/planning/800/600',
+    imageHint: 'city aerial map',
+    description: 'Desarrollamos instrumentos de planificación para guiar el crecimiento y uso del suelo de manera sostenible, asegurando el cumplimiento normativo y la protección de los recursos naturales para un futuro equilibrado.',
     services: [
-      {
-        name: 'Planes de Ordenamiento Territorial (POT)',
-        details: 'Realizamos el diagnóstico y la formulación de planes maestros que definen la estructura y las directrices para el desarrollo urbano y rural a largo plazo.'
-      },
-      {
-        name: 'Planes Parciales',
-        details: 'Elaboramos instrumentos detallados para desarrollar áreas específicas del municipio, complementando y ejecutando las directrices del POT.'
-      },
-      {
-        name: 'Correcciones y Análisis Cartográfico',
-        details: 'Ofrecemos servicios de alta precisión en la creación, corrección y análisis de cartografía base y temática para todo tipo de proyectos territoriales.'
-      }
-    ]
+      'Diagnóstico y formulación de Planes de Ordenamiento Territorial (POT).',
+      'Diagnóstico y formulación de Planes Parciales.',
+      'Correcciones cartográficas y análisis geoespacial.',
+    ],
   },
   {
     title: 'Gestión Ambiental',
-    icon: <ShieldCheck className="h-6 w-6 text-accent" />,
-    description: 'Ofrecemos un soporte integral para que las organizaciones cumplan con la legislación ambiental y mejoren su desempeño de manera proactiva y eficiente.',
+    imageUrl: 'https://picsum.photos/seed/management/800/600',
+    imageHint: 'environmental audit checklist',
+    description: 'Ofrecemos un soporte integral para que las organizaciones cumplan con la legislación ambiental, optimicen sus procesos y mejoren su desempeño de manera proactiva, eficiente y responsable.',
     services: [
-      {
-        name: 'Auditorías y Consultoría Ambiental',
-        details: 'Ejecutamos auditorías exhaustivas y ofrecemos consultoría experta, incluyendo outsourcing, para optimizar la gestión ambiental de su empresa.'
-      },
-      {
-        name: 'Indicadores y Seguimiento',
-        details: 'Diseñamos y realizamos el seguimiento a indicadores clave que permiten medir y reportar el desempeño ambiental de forma clara y objetiva.'
-      },
-      {
-        name: 'Acompañamiento Técnico y Jurídico',
-        details: 'Brindamos soporte especializado en procesos sancionatorios y en la implementación de medidas preventivas, asegurando el respaldo legal y técnico.'
-      }
-    ]
+      'Auditorías ambientales, consultoría y outsourcing.',
+      'Elaboración y seguimiento a indicadores ambientales.',
+      'Acompañamiento técnico y jurídico en procesos sancionatorios.',
+    ],
   },
   {
     title: 'Estudios Ambientales',
-    icon: <Wind className="h-6 w-6 text-accent" />,
-    description: 'Realizamos análisis técnicos y científicos para evaluar la viabilidad de proyectos y garantizar su armonía con el entorno natural y la normativa vigente.',
+    imageUrl: 'https://picsum.photos/seed/studies/800/600',
+    imageHint: 'scientist field research',
+    description: 'Realizamos análisis técnicos y científicos para evaluar la viabilidad de proyectos, garantizando su armonía con el entorno natural y el estricto cumplimiento de la normativa vigente en cada jurisdicción.',
     services: [
-      {
-        name: 'Estudios de Impacto Ambiental (EIA)',
-        details: 'Evaluamos los posibles impactos de un proyecto para definir medidas de manejo que aseguren su sostenibilidad y aprobación.'
-      },
-       {
-        name: 'Diagnósticos Ambientales de Alternativas (DAA)',
-        details: 'Analizamos diferentes opciones de un proyecto para seleccionar la alternativa que ofrezca los menores impactos ambientales y sociales.'
-      },
-      {
-        name: 'Planes de Manejo Ambiental (PMA)',
-        details: 'Diseñamos programas y estrategias específicas para prevenir, mitigar y compensar los impactos identificados en los estudios ambientales.'
-      },
-       {
-        name: 'Estudios Hidrológicos e Hidráulicos',
-        details: 'Analizamos el comportamiento del agua para proyectos que interactúan con cuerpos hídricos, garantizando una gestión sostenible del recurso.'
-      },
-      {
-        name: 'Caracterización de Flora y Fauna',
-        details: 'Realizamos inventarios y análisis de la biodiversidad para establecer líneas base y planes de conservación en áreas de influencia de proyectos.'
-      },
-      {
-        name: 'Planes de Gestión del Riesgo (PGR)',
-        details: 'Identificamos y evaluamos riesgos de origen natural o antrópico, formulando planes para su prevención y mitigación efectiva.'
-      }
-    ]
+      'Estudios de Impacto Ambiental (EIA).',
+      'Diagnósticos Ambientales de Alternativas (DAA).',
+      'Planes de Manejo Ambiental (PMA).',
+      'Estudios hidrológicos e hidráulicos.',
+      'Caracterización de flora y fauna.',
+      'Planes de Gestión del Riesgo (PGR).',
+    ],
   },
   {
     title: 'Otros Servicios Especializados',
-    icon: <Microscope className="h-6 w-6 text-accent" />,
-    description: 'Ofrecemos soluciones técnicas avanzadas y análisis de datos geoespaciales para complementar sus proyectos con información precisa y detallada.',
+    imageUrl: 'https://picsum.photos/seed/specialized/800/600',
+    imageHint: 'drone topographic survey',
+    description: 'Brindamos soluciones técnicas avanzadas y análisis de datos geoespaciales para complementar sus proyectos con información precisa, detallada y de alto valor para la toma de decisiones estratégicas.',
     services: [
-      {
-        name: 'Mediciones de Calidad de Aire y Ruido',
-        details: 'Realizamos monitoreos técnicos para medir los niveles de contaminantes en el aire y la presión sonora, garantizando el cumplimiento de los estándares normativos.'
-      },
-      {
-        name: 'Geodatabase y Mapas Temáticos',
-        details: 'Diseñamos y estructuramos bases de datos geoespaciales y creamos mapas personalizados que facilitan el análisis y la toma de decisiones territoriales.'
-      },
-      {
-        name: 'Estudios Topográficos',
-        details: 'Realizamos levantamientos topográficos de alta precisión, fundamentales para el diseño y construcción de cualquier proyecto de infraestructura.'
-      }
-    ]
-  }
+      'Mediciones de calidad de aire y ruido ambiental.',
+      'Elaboración de Geodatabase y mapas temáticos.',
+      'Estudios topográficos y permisos ambientales.',
+    ],
+  },
 ];
+
+const benefits = [
+    "Optimización de recursos y reducción de costos operativos.",
+    "Cumplimiento garantizado de la normativa ambiental vigente.",
+    "Mejora de la reputación corporativa y la imagen de marca.",
+    "Acceso a un equipo multidisciplinario de expertos.",
+    "Decisiones informadas basadas en datos precisos y actualizados.",
+    "Prevención de sanciones y mitigación de riesgos ambientales."
+]
 
 export default function ServicesSection() {
   return (
@@ -102,35 +70,55 @@ export default function ServicesSection() {
             Ofrecemos una gama completa de soluciones en consultoría ambiental, adaptadas a las necesidades de cada proyecto para garantizar el desarrollo sostenible y el cumplimiento normativo.
           </p>
         </div>
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {serviceCategories.map((category) => (
-              <AccordionItem key={category.title} value={category.title} className="border-b-2 border-primary/10">
-                <AccordionTrigger className="text-left hover:no-underline">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-accent/10 p-3 rounded-full">
-                       {category.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-headline font-semibold text-primary">{category.title}</h3>
-                      <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pl-16">
-                  <ul className="space-y-4">
-                    {category.services.map((service) => (
-                      <li key={service.name}>
-                        <h4 className="font-semibold text-foreground">{service.name}</h4>
-                        <p className="text-muted-foreground text-sm mt-1">{service.details}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+
+        <div className="space-y-16">
+          {serviceCategories.map((category, index) => (
+            <div key={category.title} className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+              <div className={`flex justify-center ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
+                <Image
+                  src={category.imageUrl}
+                  width={800}
+                  height={600}
+                  alt={`Imagen representativa de ${category.title}`}
+                  data-ai-hint={category.imageHint}
+                  className="rounded-xl shadow-lg object-cover aspect-[4/3] transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold font-headline text-primary">{category.title}</h3>
+                <p className="text-muted-foreground">{category.description}</p>
+                <ul className="space-y-2">
+                  {category.services.map((service) => (
+                    <li key={service} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-accent mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-foreground/90">{service}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
+
+        <div className="mt-20 md:mt-28">
+             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Beneficios de Elegirnos</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Aliarse con Montecarlo significa invertir en la sostenibilidad y el éxito a largo plazo de sus proyectos.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {benefits.map((benefit) => (
+                    <div key={benefit} className="bg-card p-6 rounded-lg shadow-sm flex items-start gap-4 transition-all hover:shadow-md hover:-translate-y-1">
+                        <div className="bg-accent/10 p-2 rounded-full flex-shrink-0">
+                            <CheckCircle className="h-6 w-6 text-accent" />
+                        </div>
+                        <p className="text-card-foreground">{benefit}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
       </div>
     </section>
   );

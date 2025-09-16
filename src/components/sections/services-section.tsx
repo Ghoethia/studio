@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Map, ShieldCheck, Wind, Droplets, Unplug, Layers, Microscope, AirVent, Database } from 'lucide-react';
+import { Map, ShieldCheck, Wind, Microscope } from 'lucide-react';
 
 const serviceCategories = [
   {

@@ -8,9 +8,18 @@ const serviceCategories = [
     imageHint: 'city aerial map',
     description: 'Desarrollamos instrumentos de planificación para guiar el crecimiento y uso del suelo de manera sostenible, asegurando el cumplimiento normativo y la protección de los recursos naturales para un futuro equilibrado.',
     services: [
-      'Diagnóstico y formulación de Planes de Ordenamiento Territorial (POT).',
-      'Diagnóstico y formulación de Planes Parciales.',
-      'Correcciones cartográficas y análisis geoespacial.',
+      { 
+        name: 'Planes de Ordenamiento Territorial (POT)',
+        description: 'Realizamos el diagnóstico y la formulación de planes maestros que definen el uso del suelo a nivel municipal o regional para promover un desarrollo organizado y sostenible.'
+      },
+      { 
+        name: 'Planes Parciales',
+        description: 'Elaboramos instrumentos detallados para desarrollar porciones específicas del territorio, asegurando su correcta articulación con el Plan de Ordenamiento Territorial.'
+      },
+      { 
+        name: 'Cartografía y Análisis Geoespacial',
+        description: 'Ofrecemos servicios de corrección, actualización y análisis de datos geográficos para la toma de decisiones informadas sobre el territorio.'
+      },
     ],
   },
   {
@@ -19,9 +28,18 @@ const serviceCategories = [
     imageHint: 'environmental audit checklist',
     description: 'Ofrecemos un soporte integral para que las organizaciones cumplan con la legislación ambiental, optimicen sus procesos y mejoren su desempeño de manera proactiva, eficiente y responsable.',
     services: [
-      'Auditorías ambientales, consultoría y outsourcing.',
-      'Elaboración y seguimiento a indicadores ambientales.',
-      'Acompañamiento técnico y jurídico en procesos sancionatorios.',
+      {
+        name: 'Auditorías y Consultoría Ambiental',
+        description: 'Evaluamos el cumplimiento normativo y el desempeño ambiental de su organización, identificando oportunidades de mejora y ofreciendo soluciones de outsourcing.'
+      },
+      {
+        name: 'Indicadores Ambientales',
+        description: 'Diseñamos y realizamos el seguimiento de indicadores clave para medir y comunicar de forma efectiva el desempeño ambiental de sus proyectos y operaciones.'
+      },
+      {
+        name: 'Acompañamiento Técnico y Jurídico',
+        description: 'Brindamos soporte especializado en procesos sancionatorios y preventivos de carácter ambiental para garantizar la defensa de sus intereses.'
+      },
     ],
   },
   {
@@ -30,12 +48,22 @@ const serviceCategories = [
     imageHint: 'scientist field research',
     description: 'Realizamos análisis técnicos y científicos para evaluar la viabilidad de proyectos, garantizando su armonía con el entorno natural y el estricto cumplimiento de la normativa vigente en cada jurisdicción.',
     services: [
-      'Estudios de Impacto Ambiental (EIA).',
-      'Diagnósticos Ambientales de Alternativas (DAA).',
-      'Planes de Manejo Ambiental (PMA).',
-      'Estudios hidrológicos e hidráulicos.',
-      'Caracterización de flora y fauna.',
-      'Planes de Gestión del Riesgo (PGR).',
+      {
+        name: 'Estudio de Impacto Ambiental (EIA)',
+        description: 'Identificamos y evaluamos los posibles impactos de un proyecto sobre el medio ambiente para proponer medidas de manejo efectivas y obtener la viabilidad ambiental.'
+      },
+      {
+        name: 'Diagnóstico Ambiental de Alternativas (DAA)',
+        description: 'Analizamos diferentes opciones de un proyecto para seleccionar la alternativa que presente las menores afectaciones ambientales y sociales.'
+      },
+      {
+        name: 'Planes de Manejo Ambiental (PMA)',
+        description: 'Diseñamos el conjunto de programas y acciones para prevenir, mitigar, corregir y compensar los impactos ambientales identificados para un proyecto.'
+      },
+      {
+        name: 'Estudios Hidrológicos e Hidráulicos',
+        description: 'Analizamos el comportamiento del agua en su entorno para determinar su disponibilidad, calidad y los posibles riesgos asociados a proyectos.'
+      },
     ],
   },
   {
@@ -44,9 +72,18 @@ const serviceCategories = [
     imageHint: 'drone topographic survey',
     description: 'Brindamos soluciones técnicas avanzadas y análisis de datos geoespaciales para complementar sus proyectos con información precisa, detallada y de alto valor para la toma de decisiones estratégicas.',
     services: [
-      'Mediciones de calidad de aire y ruido ambiental.',
-      'Elaboración de Geodatabase y mapas temáticos.',
-      'Estudios topográficos y permisos ambientales.',
+      {
+        name: 'Calidad de Aire y Ruido Ambiental',
+        description: 'Realizamos mediciones y modelaciones para evaluar los niveles de contaminantes en el aire y la presión sonora, garantizando el cumplimiento de los estándares.'
+      },
+      {
+        name: 'Geodatabase y Mapas Temáticos',
+        description: 'Estructuramos y administramos bases de datos geográficas (Geodatabase) y creamos cartografía especializada para visualizar y analizar información espacial.'
+      },
+      {
+        name: 'Estudios Topográficos',
+        description: 'Realizamos levantamientos topográficos precisos del terreno como insumo fundamental para el diseño y construcción de cualquier proyecto de infraestructura.'
+      },
     ],
   },
 ];
@@ -87,14 +124,17 @@ export default function ServicesSection() {
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold font-headline text-primary">{category.title}</h3>
                 <p className="text-muted-foreground">{category.description}</p>
-                <ul className="space-y-2">
+                <div className="space-y-4">
                   {category.services.map((service) => (
-                    <li key={service} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-accent mr-3 mt-1 flex-shrink-0" />
-                      <span className="text-foreground/90">{service}</span>
-                    </li>
+                    <div key={service.name}>
+                      <h4 className="font-semibold text-foreground/90 flex items-center">
+                        <CheckCircle className="h-5 w-5 text-accent mr-3 flex-shrink-0" />
+                        {service.name}
+                      </h4>
+                      <p className="text-muted-foreground ml-8 text-sm">{service.description}</p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           ))}
